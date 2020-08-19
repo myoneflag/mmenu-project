@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="author" content="www.frebsite.nl" />
+		<meta name="viewport" content="width=device-width minimum-scale=1.0 maximum-scale=1.0 user-scalable=no" />
+
+		<title>mmenu light demo</title>
+
+		<link type="text/css" rel="stylesheet" href="css/demo.css" />
+		<link type="text/css" rel="stylesheet" href="../dist/mmenu-light.css" />
+	</head>
+	<body>
+		<div id="page">
+			<div class="header">
+				<a class="nav-opener" href="#mainmenu"><span></span></a>
+				Demo
+				<nav id="mainmenu" class="mm-spn">
+					<div class="mm-header">
+						<div class="mm-header__wrapper">
+							<a href="#back" class="mm-btn mm-btn_prev" aria-label="Close submenu">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+									<path id="arrowlefticon-a" d="M18.3333333,19.4939759 L8.19047619,11.9759036 L18.3333333,4.45783133 L18.3333333,2 L6.76190476,10.5301205 C6.28571429,10.8674699 6,11.3975904 6,11.9759036 C6,12.5542169 6.28571429,13.0843373 6.76190476,13.4216867 L18.3333333,22 L18.3333333,19.4939759 Z"/>
+								</svg>
+							</a>
+							<h5 class="mm-header__title" id="mm-header__title">Menu</h5>
+							<a href="#close" class="mm-btn mm-btn_close" aria-label="Close main menu">
+								<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+									<polygon id="closeborderlessicon-a" points="12 10.727 17.25 5.477 18.523 6.75 13.273 12 18.523 17.25 17.25 18.523 12 13.273 6.75 18.523 5.477 17.25 10.727 12 5.477 6.75 6.75 5.477"/>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="mm-searchbox">
+						<a class="nav-opener" href="#search">
+							<div class="mm-searchbox__field">
+								<input class="mm-searchbox__input" type="text" placeholder="Suchbegriff eingeben…" />
+								<svg width="20" height="20" class="ee_svg-icon ee_icon ee_icon-searchicon svg-icon svg-icon--left" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="img" aria-labelledby=""><g><path id="searchicon-a" d="M9.17948718,2 C5.23076923,2 2,5.23076923 2,9.17948718 C2,13.1282051 5.23076923,16.3589744 9.17948718,16.3589744 C13.1282051,16.3589744 16.3589744,13.1282051 16.3589744,9.17948718 C16.3589744,5.23076923 13.1282051,2 9.17948718,2 Z M9.17948718,14.3076923 C6.35897436,14.3076923 4.05128205,12 4.05128205,9.17948718 C4.05128205,6.35897436 6.35897436,4.05128205 9.17948718,4.05128205 C12,4.05128205 14.3076923,6.35897436 14.3076923,9.17948718 C14.3076923,12 12,14.3076923 9.17948718,14.3076923 Z M20.4615385,22 L15.0769231,16.6153846 L16.6153846,15.0769231 L22,20.4615385 L20.4615385,22 Z M5.58974359,9.79487179 C5.48717949,8.76923077 5.79487179,7.69230769 6.41025641,6.87179487 C7.23076923,5.79487179 8.56410256,5.23076923 9.8974359,5.33333333 L9.74358974,7.38461538 C9.07692308,7.33333333 8.41025641,7.64102564 8,8.15384615 C7.69230769,8.56410256 7.53846154,9.07692308 7.58974359,9.58974359 L5.58974359,9.79487179 Z"></path></g></svg>
+								<svg width="20" height="20" class="ee_svg-icon ee_icon ee_icon-closebordericon svg-icon svg-icon--right  svg-icon--hide-on-open" focusable="false" viewBox="0 0 24 24" aria-hidden="true" role="img" aria-labelledby=""><g><path id="closeicon-a" d="M12,22 C6.5,22 2,17.5 2,12 C2,6.5 6.5,2 12,2 C17.5,2 22,6.5 22,12 C22,17.5 17.5,22 12,22 Z M12,4 C7.6,4 4,7.6 4,12 C4,16.4 7.6,20 12,20 C16.4,20 20,16.4 20,12 C20,7.6 16.4,4 12,4 Z M16.25,9.15 L14.85,7.75 L12,10.6 L9.15,7.75 L7.75,9.15 L10.6,12 L7.75,14.85 L9.15,16.25 L12,13.4 L14.85,16.25 L16.25,14.85 L13.4,12 L16.25,9.15 Z"></path></g></svg>
+								<svg width="20" height="20" class="ee_svg-icon ee_icon ee_icon-microphoneicon svg-icon svg-icon--right svg-icon--hide-on-close" focusable="false" viewBox="0 0 255.1 255.1" aria-hidden="true" role="img" aria-labelledby=""><g><g id="icons_cmyk_black"><g id="Radio"><path d="M124.6,165.1h6c23.7,0,43-19.3,43-43v-64c0-23.7-19.3-43-43-43h-6c-23.7,0-43,19.3-43,43v64
+									C81.6,145.9,100.9,165.1,124.6,165.1z M124.6,29.1h6c16,0,29,13,29,29v2.5h-15.8c-3.9,0-7,3.1-7,7s3.1,7,7,7h15.8v8.5h-15.8
+									c-3.9,0-7,3.1-7,7s3.1,7,7,7h15.8v8.5h-15.8c-3.9,0-7,3.1-7,7s3.1,7,7,7h15.8v2.6c0,16-13,29-29,29h-6c-16,0-29-13-29-29v-2.6
+									h15.8c3.9,0,7-3.1,7-7s-3.1-7-7-7H95.6v-8.5h15.8c3.9,0,7-3.1,7-7s-3.1-7-7-7H95.6v-8.5h15.8c3.9,0,7-3.1,7-7s-3.1-7-7-7H95.6
+									v-2.5C95.6,42.2,108.6,29.1,124.6,29.1z"></path><path d="M134.6,192.8c17.2-1.5,33-8.6,44.9-20.3c13.9-13.7,21.5-32.9,21.5-54.1c0-3.9-3.1-7-7-7s-7,3.1-7,7
+									c0,35.2-25,60.7-59.4,60.7s-59.4-25.5-59.4-60.7c0-3.9-3.1-7-7-7s-7,3.1-7,7c0,21.2,7.7,40.4,21.5,54.1
+									c11.9,11.7,27.6,18.8,44.8,20.3v32.7c0,0.2,0,0.3,0,0.5H88.2c-3.9,0-7,3.1-7,7s3.1,7,7,7h78.8c3.9,0,7-3.1,7-7s-3.1-7-7-7h-32.4
+									c0-0.2,0-0.3,0-0.5L134.6,192.8L134.6,192.8z"></path></g></g><g id="icons_cmyk_white" display="none"><g id="Radio_1_" display="inline"><path fill="#FFFFFF" d="M124.6,165.1h6c23.7,0,43-19.3,43-43v-64c0-23.7-19.3-43-43-43h-6c-23.7,0-43,19.3-43,43v64
+									C81.6,145.9,100.9,165.1,124.6,165.1z M124.6,29.1h6c16,0,29,13,29,29v2.5h-15.8c-3.9,0-7,3.1-7,7s3.1,7,7,7h15.8v8.5h-15.8
+									c-3.9,0-7,3.1-7,7s3.1,7,7,7h15.8v8.5h-15.8c-3.9,0-7,3.1-7,7s3.1,7,7,7h15.8v2.6c0,16-13,29-29,29h-6c-16,0-29-13-29-29v-2.6
+									h15.8c3.9,0,7-3.1,7-7s-3.1-7-7-7H95.6v-8.5h15.8c3.9,0,7-3.1,7-7s-3.1-7-7-7H95.6v-8.5h15.8c3.9,0,7-3.1,7-7s-3.1-7-7-7H95.6
+									v-2.5C95.6,42.2,108.6,29.1,124.6,29.1z"></path><path fill="#FFFFFF" d="M134.6,192.8c17.2-1.5,33-8.6,44.9-20.3c13.9-13.7,21.5-32.9,21.5-54.1c0-3.9-3.1-7-7-7s-7,3.1-7,7
+									c0,35.2-25,60.7-59.4,60.7s-59.4-25.5-59.4-60.7c0-3.9-3.1-7-7-7s-7,3.1-7,7c0,21.2,7.7,40.4,21.5,54.1
+									c11.9,11.7,27.6,18.8,44.8,20.3v32.7c0,0.2,0,0.3,0,0.5H88.2c-3.9,0-7,3.1-7,7s3.1,7,7,7h78.8c3.9,0,7-3.1,7-7s-3.1-7-7-7h-32.4
+									c0-0.2,0-0.3,0-0.5L134.6,192.8L134.6,192.8z"></path></g></g></g></svg>
+							</div>
+						</a>
+					</div>
+					<div class="mm-panel" data-panel-id="#mainmenu">
+						<ul class="mm-listview">
+							<li class="mm-listitem"><a href="#">Home</a></li>
+							<li class="mm-listitem"><span class="mm-listitem__header">Producte</span>
+								<div class="mm-panel" data-panel-id="#aboutus">
+									<ul class="mm-listview">
+										<li class="mm-listitem"><a href="#about/history">History</a></li>
+										<li class="mm-listitem"><span class="mm-listitem__header">The team</span>
+											<div class="mm-panel" data-panel-id="#theteam">
+												<ul class="mm-listview">
+													<li class="mm-listitem"><a href="#about/team/management">Management</a></li>
+													<li class="mm-listitem"><a href="#about/team/sales">Sales</a></li>
+													<li class="mm-listitem"><a href="#about/team/development">Development</a></li>
+												</ul>
+											</div>
+										</li>
+										<li class="mm-listitem"><a href="#about/address">Our address</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="mm-listitem"><span class="mm-listitem__header">Services</span>
+								<div class="mm-panel" data-panel-id="#aboutus">
+									<ul class="mm-listview">
+										<li class="mm-listitem"><a href="#">Ratgeber & Rechtsportal</a></li>
+										<li class="mm-listitem"><a href="#">Freundschaftswerbung</a></li>
+										<li class="mm-listitem"><span class="mm-listitem__header">Services für ERGO Kunden</span>
+											<div class="mm-panel" data-panel-id="#theteam">
+												<ul class="mm-listview">
+													<li class="mm-listitem"><a href="#about/team/management">Management</a></li>
+													<li class="mm-listitem"><a href="#about/team/sales">Sales</a></li>
+													<li class="mm-listitem"><a href="#about/team/development">Development</a></li>
+													<li class="mm-listitem"><a href="#about/team/management">Management</a></li>
+													<li class="mm-listitem"><a href="#about/team/sales">Sales</a></li>
+													<li class="mm-listitem"><a href="#about/team/development">Development</a></li>
+													<li class="mm-listitem"><a href="#about/team/management">Management</a></li>
+													<li class="mm-listitem"><a href="#about/team/sales">Sales</a></li>
+												</ul>
+											</div>
+										</li>
+										<li class="mm-listitem"><a href="#">Alle Services im Überblick</a></li>
+									</ul>
+									<div class="mm-box">
+										<ul class="mm-listview--no-js">
+											<li class="mm-listitem--no-js">
+												<a class="mm-listitem__link--no-js" href="#about/team/development">
+													<div class="mm-wrapper">
+														<div class="mm-wrapper__inside mm-wrapper__inside--left">
+															<div class="mm-wrapper__icon">
+																<img src="https://via.placeholder.com/20x20.png" alt="">
+															</div>
+														</div>
+														<div class="mm-wrapper__inside mm-wrapper__inside--right">
+															<div class="mm-wrapper__text">
+																<p class="mm-wrapper__heading">
+																	<b>Berater finden</b>
+																</p>
+																<p class="mm-wrapper__subtext">
+																	Reichen Sie Ihre Rechnung ein – bequem online oder direkt telefonisch. 
+																</p>
+															</div>
+															<div class="mm-wrapper__button">
+																<button>Learn more further</button>
+															</div>
+														</div>
+													</div>
+												</a>
+											</li>
+											<li class="mm-listitem--no-js">
+												<a class="mm-listitem__link--no-js" href="#about/team/development">
+													<div class="mm-wrapper">
+														<div class="mm-wrapper__inside mm-wrapper__inside--left">
+															<div class="mm-wrapper__icon">
+																<img src="https://via.placeholder.com/14x22.png" alt="">
+															</div>
+														</div>
+														<div class="mm-wrapper__inside mm-wrapper__inside--right">
+															<div class="mm-wrapper__text">
+																<p class="mm-wrapper__heading">
+																	Berater finden
+																</p>
+															</div>
+														</div>
+													</div>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</li>
+							<li class="mm-listitem"><span class="mm-listitem__header no-display">Suche</span>
+								<div class="mm-panel" data-panel-id="#search">
+									<div class="results__header">
+										<p>Beliebte Suchbegriffe</p>
+									</div>
+									<ul class="mm-listview">
+										<li class="mm-listitem"><a href="#">ERGO Zahnzusatzversicherung Sofort ohne Wartezeit</a></li>
+										<li class="mm-listitem"><a href="#">Rechnung einreichen</a></li>
+										<li class="mm-listitem"><a href="#">Autoversicherung</a></li>
+										<li class="mm-listitem"><a href="#">Berater finden</a></li>
+									</ul>
+								</div>
+							</li>
+							<li class="mm-listitem"><a href="#contact">Contact</a></li>
+						</ul>
+						<div class="mm-box">
+							<ul class="mm-listview--no-js">
+								<li class="mm-listitem--no-js">
+									<a class="mm-listitem__link--no-js" href="#about/team/development">
+										<div class="mm-wrapper">
+											<div class="mm-wrapper__inside mm-wrapper__inside--left">
+												<div class="mm-wrapper__icon">
+													<img src="https://via.placeholder.com/20x20.png" alt="">
+												</div>
+											</div>
+											<div class="mm-wrapper__inside mm-wrapper__inside--right">
+												<div class="mm-wrapper__text">
+													<p class="mm-wrapper__heading">
+														<b>Berater finden</b>
+													</p>
+													<p class="mm-wrapper__subtext">
+														Reichen Sie Ihre Rechnung ein – bequem online oder direkt telefonisch. 
+													</p>
+												</div>
+												<div class="mm-wrapper__button">
+													<button>Learn more further</button>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+								<li class="mm-listitem--no-js">
+									<a class="mm-listitem__link--no-js" href="#about/team/development">
+										<div class="mm-wrapper">
+											<div class="mm-wrapper__inside mm-wrapper__inside--left">
+												<div class="mm-wrapper__icon">
+													<img src="https://via.placeholder.com/14x22.png" alt="">
+												</div>
+											</div>
+											<div class="mm-wrapper__inside mm-wrapper__inside--right">
+												<div class="mm-wrapper__text">
+													<p class="mm-wrapper__heading">
+														Berater finden
+													</p>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="mm-box">
+							<ul class="mm-box__list">
+								<li class="mm-listitem--no-js">
+									<a class="mm-listitem__link--no-js" href="#about/team/development">
+										<div class="mm-wrapper mm-wrapper--phone">
+											<div class="mm-wrapper__inside mm-wrapper__inside--left">
+												<div class="mm-wrapper__icon">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24" class="injected-svg" style="height:1.8em;width:1.8em" data-src="/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/icons/PhoneIcon.svg">
+													<path id="phoneicon-a" d="M20.6561501,15.8961175 L17.1225285,12.8371615 C16.647863,12.4679772 16.0677161,12.2570147 15.4875693,12.2570147 C14.8019412,12.2570147 14.1690538,12.5207178 13.6943882,12.9953834 L12.8505383,13.8392333 C12.7450571,13.9447146 12.6395758,13.9447146 12.5868352,13.9447146 C12.5340946,13.9447146 12.4286133,13.9447146 12.3231321,13.8392333 L10.1607667,11.6241273 C10.1080261,11.5713867 10.0552854,11.4659054 10.0552854,11.3604242 C10.0552854,11.3076836 10.0552854,11.2022023 10.1607667,11.1494617 L11.0046166,10.3056118 C11.9539478,9.35628061 12.0066884,7.82680263 11.1100978,6.82473085 L8.10388249,3.34384992 C7.68195753,2.81644372 6.99632947,2.5 6.31070141,2.5 C5.73055459,2.5 5.15040777,2.71096248 4.62300157,3.18562806 C4.57026095,3.23836868 -1.28394789,9.30353999 6.67988575,17.3201143 C7.99840125,18.6913704 9.36965738,19.6934422 10.7936541,20.3790702 L10.7936541,20.3790702 C10.8991354,20.4318108 11.6902447,20.8009952 12.2703915,20.959217 C12.5868352,21.0646983 12.9032789,21.1701795 13.2197226,21.2229201 L13.5361664,19.1132953 C13.3252039,19.0605547 13.1142414,19.0078141 12.9032789,18.9550735 L12.8505383,18.9550735 C12.5868352,18.8495922 12.0066884,18.6386298 11.6902447,18.4804079 C10.4772104,17.9002611 9.31691676,17.0036705 8.15662311,15.7906363 C1.72226746,9.35628061 5.94151707,4.82058728 6.09973893,4.71510604 C6.20522017,4.6096248 6.31070141,4.6096248 6.31070141,4.6096248 C6.36344203,4.6096248 6.41618265,4.6096248 6.46892327,4.71510604 L9.52787924,8.24872759 C9.6861011,8.40694945 9.63336048,8.67065255 9.52787924,8.82887441 L8.73676993,9.61998371 C8.26210435,10.0419087 7.99840125,10.6747961 7.99840125,11.3076836 C7.99840125,11.940571 8.26210435,12.6261991 8.68402931,13.048124 L10.8463947,15.2632301 C11.3210603,15.7378956 11.9012071,16.0015987 12.5868352,16.0015987 C13.2724633,16.0015987 13.8526101,15.7378956 14.3272757,15.3159707 L15.1711256,14.4721208 C15.2238662,14.4193801 15.3820881,14.3666395 15.4875693,14.3666395 C15.5403099,14.3666395 15.6985318,14.4193801 15.7512724,14.4721208 L19.2321533,17.5310767 C19.284894,17.5838174 19.3376346,17.6892986 19.3376346,17.6892986 C19.3376346,17.7420392 19.3376346,17.7947798 19.284894,17.8475205 C19.284894,17.8475205 18.5465253,18.5331485 17.3862316,18.9550735 L18.0718597,20.959217 C19.7595595,20.3263296 20.7088907,19.3769984 20.8143719,19.3242578 C21.2890375,18.8495922 21.5,18.2694454 21.5,17.5838174 C21.4472594,16.9509299 21.1308157,16.3180425 20.6561501,15.8961175 Z"></path>                        </svg>
+												</div>
+											</div>
+											<div class="mm-wrapper__inside mm-wrapper__inside--right">
+												<div class="mm-wrapper__text">
+													<p class="mm-wrapper__heading">
+														0800 / 3746 095
+													</p>
+													<p class="mm-wrapper__subtext">
+														Gebührenfrei von 7-24 Uhr
+													</p>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="mm-box">
+							<ul class="mm-box__list">
+								<li class="mm-box__listitem">
+									<a class="mm-listitem__link--no-js" href="#about/team/development">
+										<div class="mm-wrapper">
+											<div class="mm-wrapper__inside mm-wrapper__inside--left">
+												<div class="mm-wrapper__icon">
+													<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24" class="injected-svg" style="height:1.8em;width:1.8em" data-src="/etc.clientlibs/ergoone/clientlibs/publish/assets/resources/icons/PhoneIcon.svg">
+													<path id="phoneicon-a" d="M20.6561501,15.8961175 L17.1225285,12.8371615 C16.647863,12.4679772 16.0677161,12.2570147 15.4875693,12.2570147 C14.8019412,12.2570147 14.1690538,12.5207178 13.6943882,12.9953834 L12.8505383,13.8392333 C12.7450571,13.9447146 12.6395758,13.9447146 12.5868352,13.9447146 C12.5340946,13.9447146 12.4286133,13.9447146 12.3231321,13.8392333 L10.1607667,11.6241273 C10.1080261,11.5713867 10.0552854,11.4659054 10.0552854,11.3604242 C10.0552854,11.3076836 10.0552854,11.2022023 10.1607667,11.1494617 L11.0046166,10.3056118 C11.9539478,9.35628061 12.0066884,7.82680263 11.1100978,6.82473085 L8.10388249,3.34384992 C7.68195753,2.81644372 6.99632947,2.5 6.31070141,2.5 C5.73055459,2.5 5.15040777,2.71096248 4.62300157,3.18562806 C4.57026095,3.23836868 -1.28394789,9.30353999 6.67988575,17.3201143 C7.99840125,18.6913704 9.36965738,19.6934422 10.7936541,20.3790702 L10.7936541,20.3790702 C10.8991354,20.4318108 11.6902447,20.8009952 12.2703915,20.959217 C12.5868352,21.0646983 12.9032789,21.1701795 13.2197226,21.2229201 L13.5361664,19.1132953 C13.3252039,19.0605547 13.1142414,19.0078141 12.9032789,18.9550735 L12.8505383,18.9550735 C12.5868352,18.8495922 12.0066884,18.6386298 11.6902447,18.4804079 C10.4772104,17.9002611 9.31691676,17.0036705 8.15662311,15.7906363 C1.72226746,9.35628061 5.94151707,4.82058728 6.09973893,4.71510604 C6.20522017,4.6096248 6.31070141,4.6096248 6.31070141,4.6096248 C6.36344203,4.6096248 6.41618265,4.6096248 6.46892327,4.71510604 L9.52787924,8.24872759 C9.6861011,8.40694945 9.63336048,8.67065255 9.52787924,8.82887441 L8.73676993,9.61998371 C8.26210435,10.0419087 7.99840125,10.6747961 7.99840125,11.3076836 C7.99840125,11.940571 8.26210435,12.6261991 8.68402931,13.048124 L10.8463947,15.2632301 C11.3210603,15.7378956 11.9012071,16.0015987 12.5868352,16.0015987 C13.2724633,16.0015987 13.8526101,15.7378956 14.3272757,15.3159707 L15.1711256,14.4721208 C15.2238662,14.4193801 15.3820881,14.3666395 15.4875693,14.3666395 C15.5403099,14.3666395 15.6985318,14.4193801 15.7512724,14.4721208 L19.2321533,17.5310767 C19.284894,17.5838174 19.3376346,17.6892986 19.3376346,17.6892986 C19.3376346,17.7420392 19.3376346,17.7947798 19.284894,17.8475205 C19.284894,17.8475205 18.5465253,18.5331485 17.3862316,18.9550735 L18.0718597,20.959217 C19.7595595,20.3263296 20.7088907,19.3769984 20.8143719,19.3242578 C21.2890375,18.8495922 21.5,18.2694454 21.5,17.5838174 C21.4472594,16.9509299 21.1308157,16.3180425 20.6561501,15.8961175 Z"></path>                        </svg>
+												</div>
+											</div>
+											<div class="mm-wrapper__inside mm-wrapper__inside--right">
+												<div class="mm-wrapper__text">
+													<p class="mm-wrapper__heading">
+														0800 / 3746 095
+													</p>
+													<p class="mm-wrapper__subtext">
+														Gebührenfrei von 7-24 Uhr
+													</p>
+												</div>
+												<div class="mm-wrapper__button">
+													<button>Learn more further</button>
+												</div>
+											</div>
+										</div>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+			</div>
+
+			<div class="content">
+				<p><strong>This is a demo.</strong><br />
+					Click the hamburger icon to open the menu.</p>
+
+					<p>Open <a class="nav-opener" href="#aboutus">About us</a></p>
+					<p>Open <a class="nav-opener" href="#theteam">The team</a></p>
+					<p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br /><p>Some long text to make website longer</p><br />
+			</div>
+		</div>
+
+		<script src="../dist/mmenu-light.js"></script>
+		<script>
+			var mainMenuSelector = document.querySelector('#mainmenu');
+			var NavOpeners = document.querySelectorAll( '.nav-opener' );
+			var closeButton = document.querySelector( '.mm-btn_close' );
+			var prevButton = document.querySelector( '.mm-btn_prev' );
+
+			if (mainMenuSelector) {
+				var menu = new MmenuLight(mainMenuSelector);
+				var navigation = menu.navigation();
+				var drawer = menu.offcanvas();
+			}
+
+			//Open the menu on selected panel
+			if (NavOpeners) {
+				for (let i = 0; i < NavOpeners.length; i++) {
+					NavOpeners[i].addEventListener( 'click', evnt => {
+						evnt.preventDefault();
+						const navOpener = evnt.target.closest('.nav-opener');
+						var panelElement = document.querySelector(`[data-panel-id="${navOpener.hash}"`);
+						navigation.openPanel(panelElement);
+						drawer.open();
+					});
+				}
+			}
+
+			if (closeButton) {
+				closeButton.addEventListener( 'click', evnt => {
+					evnt.preventDefault();
+					drawer.close();
+				});
+			}
+
+			if (prevButton) {
+				prevButton.addEventListener( 'click', evnt => {
+					evnt.preventDefault();
+					menu.handleClosings();
+				});
+			}
+		</script>
+	</body>
+</html>

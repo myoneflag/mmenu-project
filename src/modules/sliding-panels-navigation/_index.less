@@ -1,0 +1,379 @@
+@import '_variables';
+@import '_additional-variables';
+
+.mmspn-reset {
+    display: block;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+//  The menu
+.mm-spn {
+    .mmspn-reset;
+
+    width: 100%;
+    height: 100%;
+
+    //  Prevent the entire menu from highlighting when clicking the navbar
+    -webkit-tap-highlight-color: transparent;
+
+    //  Enables smooth scrolling.
+    -webkit-overflow-scrolling: touch;
+
+    //  Prevent any content being visible outside the menu
+    overflow: hidden;
+    clip-path: inset(0 0 0 0);
+
+    //  This creates a new viewport from the menu so the panels can be fixed
+    transform: translateX(0px);
+
+    color: @theme-darkest-gray;
+    background: @theme-white;
+}
+
+//Menu header
+.mm-header {
+    height: @mmspn_header_height;
+    margin-bottom: @mmspn_searchbox_margin-bottom;
+    background: @theme-brand-color;
+    color: @theme-white;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    &__title {
+        margin: 0;
+        font-size: 14px;
+        //  Ellipsis.
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+
+        @media (min-width: (@breakpoint-l)) {
+            font-size: 16px;
+        }
+    }
+
+    .mm-btn {
+        height: 100%;
+        display: flex;
+        align-items: center;
+
+        &_prev {
+            padding-left: 24px;
+        }
+
+        &_close {
+            padding-right: 24px;
+        }
+
+        svg {
+            fill: @theme-white;
+        }
+    }
+}
+
+//Menu searchbox
+.mm-searchbox {
+    position: relative;
+    height: @mmspn_searchbox_height;
+    width: calc(100% - 48px);
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-bottom: @mmspn_header_margin-bottom - 12px;
+    text-align: center;
+
+    &__input:focus + svg {
+        fill: @theme-darkest-gray;
+    }
+
+    &__input:focus ~ .svg-icon--hide-on-close {
+        display: none;
+    }
+
+    &__input:focus ~ .svg-icon--hide-on-open {
+        display: block;
+    }
+
+    .svg-icon {
+        position: absolute;
+        transform: translateY(-50%);
+        top: 50%;
+        fill: #AEAEAE;
+
+        &--left {
+            left: 24px;
+        }
+
+        &--right {
+            right: 24px;
+        }
+
+        &--hide-on-open {
+            display: none;
+        }
+
+        &.ee_icon-microphoneicon {
+            fill: @theme-darkest-gray;
+        }
+    }
+
+    &__input {
+        width: 100%;
+        padding: 12px 50px;
+        height: 48px;
+        font-size: 14px;
+        border-radius: 32px;
+        border: none;
+        background-color: #F2F2F2;
+    }
+}
+
+.results__header {
+    padding-left: 24px;
+
+    p {
+        font-size: 12px;
+        font-weight: bold;
+        color: @theme-darkest-gray;
+    }
+}
+
+//  Listviews
+.mm-spn {
+    //  All listviews.
+    .mm-panel {
+        .mmspn-reset;
+
+        //  Enables smooth scrolling.
+        -webkit-overflow-scrolling: touch;
+
+        position: fixed;
+        top: 0;
+        left: 100%;
+        bottom: 0;
+        z-index: 2; // Needs a z-index to be above its parent.
+
+        //  Fix for weird iOS Safari issue:
+        //  A fixed element is not visible outside of its parent if its parent is scrollable.
+        width: 100% + @mmspn_panel_offset;
+        padding-right: @mmspn_panel_offset;
+        //  /Fix
+
+        line-height: @mmspn_line_height;
+
+        overflow: visible;
+        overflow-y: auto;
+        background: inherit;
+        transition: left @mmspn_transition_duration ease 0s;
+
+        cursor: default;
+    }
+
+    //Reset for list
+    ul {
+        .mmspn-reset;
+        background: inherit;
+    }
+
+    //  First level listview.
+    > .mm-panel {
+        left: 0;
+    }
+
+    //  Listview opened.
+    .mm-panel.mm-spn--open {
+        left: 0;
+    }
+
+    //  Child listview opened.
+    .mm-panel.mm-spn--parent {
+        left: -@mmspn_panel_offset;
+        overflow-y: hidden;
+    }
+}
+
+//  Listitems
+.mm-spn {
+    .mm-listitem,
+    li {
+        .mmspn-reset;
+
+        position: relative;
+        background: inherit;
+        cursor: pointer;
+    }
+}
+
+//  Anchors
+.mm-panel {
+    a,
+    span {
+        .mmspn-reset;
+
+        position: relative;
+        z-index: 1;
+        padding: ((@mmspn_item_height - @mmspn_line_height) / 2) @mmspn_item_indent;
+        padding-left: @mmspn_item_indent_left;
+    }
+
+    a {
+        background: inherit;
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+// Anchors arrows and hover effect
+.mm-listitem {
+    // Add arrow to parent
+    & > span:before {
+        content: '';
+        background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20xmlns%3Axlink%3D%22http%3A//www.w3.org/1999/xlink%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%3E%0A%20%20%3Cpath%20id%3D%22arrowrighticon-a%22%20d%3D%22M6%2C19.4939759%20L16.1428571%2C11.9759036%20L6%2C4.45783133%20L6%2C2%20L17.5714286%2C10.5301205%20C18.047619%2C10.8674699%2018.3333333%2C11.3975904%2018.3333333%2C11.9759036%20C18.3333333%2C12.5542169%2018.047619%2C13.0843373%2017.5714286%2C13.4216867%20L6%2C22%20L6%2C19.4939759%20Z%22/%3E%0A%3C/svg%3E%0A');
+        background-repeat: no-repeat;
+        background-size: contain;
+        display: block;
+        position: absolute;
+        right: @mmspn_item_indent;
+        z-index: 0;
+        width: @mmspn_arrow_size;
+        height: @mmspn_arrow_size;
+
+        @media (min-width: (@breakpoint-l)) {
+            width: @mmspn_arrow_size--desktop;
+            height: @mmspn_arrow_size--desktop;
+        }
+    }
+
+    //Add hover and focus effect on desktop
+    @media (min-width: (@breakpoint-l)) {
+        & > a:hover,
+        & > a:focus,
+        & > span:hover,
+        & > span:focus {
+            background: @theme-lightest-gray;
+            color: @theme-brand-color;
+        }
+
+        & > span:focus:before,
+        & > span:hover:before {
+            filter: invert(8%) sepia(96%) saturate(5917%) hue-rotate(327deg) brightness(75%) contrast(111%);
+        }
+    }
+}
+
+//Listitem wrapper
+.mm-wrapper {
+    display: flex;
+
+    &__inside {
+        &--left {
+            margin-left: -35px;
+        }
+
+        &--right {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        
+        p {
+            margin-top: 0;
+            margin-bottom: 4px;
+        }
+    }
+
+    &__heading {
+        color: @theme-darkest-gray;
+
+        @media (min-width: (@breakpoint-l)) {
+            font-size: 16px;
+        }
+    }
+
+    &__subtext {
+        line-height: 20px;
+        color: @theme-darker-gray
+    }
+
+    &__text + &__button {
+        padding-top: 20px;
+    }
+
+    &__icon {
+        padding-right: 15px;
+        width: 35px;
+        text-align: right;
+    }
+
+    &__arrow {
+        margin-left: auto;
+    }
+
+    &__button,
+    button {
+        width: 100%;
+    }
+}
+
+//Listitem wrapper phone
+.mm-wrapper--phone {
+    .mm-wrapper__heading {
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .mm-wrapper__heading,
+    .mm-wrapper__icon {
+        color: @theme-brand-color;
+    }
+}
+
+//Menu box
+.mm-box {
+    &:before {
+        content: '';
+        display: block;
+        top: inherit;
+        z-index: 2;
+        width: 100%;
+        border-top: 1px solid @theme-light-gray;
+    }
+}
+
+//Padding between sections
+.mm-box,
+.mm-box:before,
+.mm-panel > .mm-listview {
+    padding-bottom: 21px; // 12px from ul + 21px = 33px
+
+    @media (min-width: (@breakpoint-l)) {
+        padding-bottom: 36px; // 12px from ul + 36px = 48px
+    }
+}
+
+.no-display {
+    display: none !important;
+}
+
+//hide nav at the beginning and display it after nav is ready
+.mm-spn {
+    display: none;
+
+    .mm-ocd__content & {
+        display: block;
+    }
+}
+
+@import '_navbar';
+@import '_vertical';

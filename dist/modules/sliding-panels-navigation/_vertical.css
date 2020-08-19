@@ -1,0 +1,40 @@
+/** Animation duration. */
+/** Arrow size. */
+/** Border opacity. */
+/** Navbar opacity. */
+/** Item height. */
+/** Item indent. */
+/** Item indent. */
+/** Line height. */
+/** Header margin-bottom. */
+/** Header height. */
+/** Searchbox margin-bottom. */
+/** Searchbox height. */
+/** Panel offset. */
+/** Panel top offset. */
+.mm-spn.mm-spn--vertical {
+  overflow-y: auto;
+}
+.mm-spn.mm-spn--vertical .mm-listview {
+  width: 100%;
+  padding-right: 0;
+  position: static;
+}
+.mm-spn.mm-spn--vertical .mm-listview .mm-listview {
+  display: none;
+  padding-left: 48px;
+}
+.mm-spn.mm-spn--vertical .mm-listview .mm-listview:after {
+  height: 24px;
+}
+.mm-spn.mm-spn--vertical .mm-listview.mm-spn--open {
+  display: block;
+}
+.mm-spn.mm-spn--vertical .mm-listitem.mm-spn--open:before {
+  -webkit-transform: rotate(135deg) translate(-50%, 0);
+          transform: rotate(135deg) translate(-50%, 0);
+}
+.mm-spn.mm-spn--vertical .mm-listview .mm-listview .mm-listitem:last-child:after {
+  content: none;
+  display: none;
+}

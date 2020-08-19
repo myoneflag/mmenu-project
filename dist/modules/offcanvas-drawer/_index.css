@@ -1,0 +1,79 @@
+html.mm-ocd-opened {
+  overflow-y: hidden;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: none;
+}
+.mm-ocd {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 9999;
+  overflow: hidden;
+  -ms-scroll-chaining: none;
+      overscroll-behavior: contain;
+  background: rgba(0, 0, 0, 0);
+  -webkit-transition-property: bottom, background-color;
+  transition-property: bottom, background-color;
+  -webkit-transition-duration: 0s, 0.3s;
+          transition-duration: 0s, 0.3s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+  -webkit-transition-delay: 0.45s, 0.15s;
+          transition-delay: 0.45s, 0.15s;
+}
+.mm-ocd--open {
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.mm-ocd__content {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  min-width: 200px;
+  max-width: 432px;
+  background: #fff;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.3s;
+          transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+.mm-ocd--left .mm-ocd__content {
+  left: 0;
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+}
+.mm-ocd--right .mm-ocd__content {
+  right: 0;
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
+}
+.mm-ocd--open .mm-ocd__content {
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+.mm-ocd__backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  width: calc(100% - 100%);
+  min-width: calc(100% - 432px);
+  max-width: calc(100% - 200px);
+  background: rgba(3, 2, 1, 0);
+}
+.mm-ocd--left .mm-ocd__backdrop {
+  right: 0;
+}
+.mm-ocd--right .mm-ocd__backdrop {
+  left: 0;
+}

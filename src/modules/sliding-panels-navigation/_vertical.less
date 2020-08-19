@@ -1,0 +1,56 @@
+@import "_variables";
+@import '_additional-variables';
+
+.mm-spn {
+    //  The menu
+    &.mm-spn--vertical {
+        //  Enable scrolling.
+        overflow-y: auto;
+    }
+
+    //  Listviews
+    &.mm-spn--vertical {
+        .mm-listview {
+            //  Undo the fix for weird iOS Safari issue.
+            width: 100%;
+            padding-right: 0;
+            //  /Undo fix.
+
+            //  Undo sliding submenus.
+            //  Also undoes the top, left, right, bottom and z-index properties :)
+            position: static;
+
+            //  Submenus
+            .mm-listview {
+                display: none;
+                padding-left: @mmspn_item_indent;
+
+                //  Because padding-bottom doesn't work if it is scrollable.
+                &:after {
+                    height: @mmspn_item_height / 2;
+                }
+            }
+
+            //  Show opened submenus.
+            &.mm-spn--open {
+                display: block;
+            }
+        }
+    }
+
+    //  Listitems
+    &.mm-spn--vertical {
+        //  Rotate the button.
+        .mm-listitem.mm-spn--open:before {
+            transform: rotate(135deg) translate(-50%, 0);
+        }
+
+        //  Remove border from last subchild.
+        .mm-listview .mm-listview .mm-listitem {
+            &:last-child:after {
+                content: none;
+                display: none;
+            }
+        }
+    }
+}

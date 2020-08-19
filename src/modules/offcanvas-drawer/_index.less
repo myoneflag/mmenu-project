@@ -1,0 +1,89 @@
+//  Less Variables
+@mmocd_width: 100%;
+@mmocd_min_width: 200px;
+@mmocd_max_width: 432px;
+
+@mmocd_transition_duration: 0.3s;
+
+//  The rest of the page
+html.mm-ocd-opened {
+    //  Somewhat prevents scrolling.
+    overflow-y: hidden;
+    overscroll-behavior: none;
+}
+
+//  The wrapper
+.mm-ocd {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 100%;
+    left: 0;
+    z-index: 9999;
+    overflow: hidden;
+    overscroll-behavior: contain;
+    background: rgba(#000, 0);
+    transition-property: bottom, background-color;
+    transition-duration: 0s, @mmocd_transition_duration;
+    transition-timing-function: ease;
+    transition-delay: @mmocd_transition_duration * 1.5, @mmocd_transition_duration * 0.5;
+
+    &--open {
+        bottom: 0;
+        background: rgba(#000, 0.8);
+        transition-delay: 0s;
+    }
+}
+
+//  The content
+.mm-ocd__content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 2;
+
+    width: @mmocd_width;
+    min-width: @mmocd_min_width;
+    max-width: @mmocd_max_width;
+
+    background: #fff;
+    transition-property: transform;
+    transition-duration: @mmocd_transition_duration;
+    transition-timing-function: ease;
+
+    .mm-ocd--left & {
+        left: 0;
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    .mm-ocd--right & {
+        right: 0;
+        transform: translate3d(100%, 0, 0);
+    }
+
+    .mm-ocd--open & {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+//  The backdrop
+.mm-ocd__backdrop {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 3;
+
+    width: calc(100% - @mmocd_width);
+    min-width: calc(100% - @mmocd_max_width);
+    max-width: calc(100% - @mmocd_min_width);
+
+    background: rgba(3, 2, 1, 0);
+
+    .mm-ocd--left & {
+        right: 0;
+    }
+
+    .mm-ocd--right & {
+        left: 0;
+    }
+}
